@@ -1,0 +1,29 @@
+{
+  "name": "fyi.vitaly.im",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "wrangler": "wrangler dev",
+    "astro": "astro",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^12.6.12",
+    "astro": "^5.17.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.2.1",
+    "daisyui": "^5.5.19",
+    "oxfmt": "^0.36.0",
+    "oxlint": "^1.51.0",
+    "tailwindcss": "^4.2.1"
+  },
+  "packageManager": "pnpm@10.11.0"
+}
