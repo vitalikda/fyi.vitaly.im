@@ -1,40 +1,44 @@
-# Browser Info App
+# fyi.vitaly.im
 
-A small web app that shows your browser and device information. Built with **Astro**, deployed on **Cloudflare** (Pages/Workers), and styled with **DaisyUI** (Tailwind).
+A tiny web app that tells you things about yourself. Your browser knows more than you think.
 
-## What it shows
+## What you'll see
 
-- **IP Address**: Your IP and country (from Cloudflare headers)
-- **Region**: City, region, colo (Cloudflare data center)
-- **Browser**: User agent, vendor, platform, language, cookies, Do Not Track
-- **Device**: CPU cores, device memory, max touch points
-- **Network**: Connection type and quality (when available)
-- **Screen**: Dimensions, pixel ratio, color depth, orientation
-- **GPU**: WebGL vendor and renderer
-- **Date and Time**: Local datetime, timezone, UTC offset
+- **Location** — IP address, city, region, country (via Cloudflare)
+- **Screen** — resolution, pixel ratio, color depth, window size
+- **Device** — CPU cores, memory, touch points
+- **System** — network type, GPU, timezone
+- **Browser** — user agent, platform, language
 
-Browser, device, screen, GPU, and date/time data are read client-side from `navigator`, `window`, and WebGL. IP and region come from the `/api/info` server route (Cloudflare request metadata).
+## Get started
 
-This project uses **pnpm**. Install with `pnpm install` (or enable [Corepack](https://nodejs.org/api/corepack.html) so the `packageManager` field is respected).
+```bash
+pnpm install
+pnpm dev
+```
+
+Open [localhost:4321](http://localhost:4321) and meet your browser.
 
 ## Commands
 
-| Command          | Action                                   |
-| ---------------- | ---------------------------------------- |
-| `pnpm dev`       | Start dev server at `localhost:4321`     |
-| `pnpm build`     | Build for Cloudflare (output in `dist/`) |
-| `pnpm preview`   | Preview production build locally         |
-| `pnpm typecheck` | Run TypeScript check                     |
+| Command | What it does |
+|---------|--------------|
+| `pnpm dev` | Start dev server |
+| `pnpm build` | Build for production |
+| `pnpm preview` | Preview the build |
+| `pnpm typecheck` | Check types |
+| `pnpm lint` | Lint with oxlint |
+| `pnpm format` | Format with oxfmt |
 
-## Deploy to Cloudflare
+## Deploy
 
-1. Install [Wrangler](https://developers.cloudflare.com/workers/wrangler/install-and-update/) and log in.
-2. From the project root:
-   - **Cloudflare Pages**: connect the repo in the dashboard and set build command `pnpm run build` (or `pnpm build`) and output directory `dist`, or use `pnpm exec wrangler pages deploy dist`.
-   - **Workers**: run `pnpm exec wrangler deploy` (uses `wrangler.jsonc`).
+```bash
+pnpm build
+pnpm exec wrangler deploy
+```
 
-## Stack
+Or connect the repo to Cloudflare Pages and let it do its thing.
 
-- [Astro](https://astro.build)
-- [Tailwind CSS](https://tailwindcss.com) + [DaisyUI](https://daisyui.com)
-- [@astrojs/cloudflare](https://docs.astro.build/en/guides/deploy/cloudflare/)
+## Built with
+
+[Astro](https://astro.build) + [Preact](https://preactjs.com) + [Tailwind](https://tailwindcss.com) + [DaisyUI](https://daisyui.com) + [Cloudflare](https://cloudflare.com)
