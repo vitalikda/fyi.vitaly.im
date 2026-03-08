@@ -1,0 +1,115 @@
+---
+
+---
+
+<div class="w-14 h-14 shrink-0 relative" style="overflow: visible;">
+  <svg
+    viewBox="0 0 128 128"
+    class="w-full h-full"
+    style="overflow: visible;"
+    aria-hidden="true"
+  >
+    <defs>
+      <linearGradient
+        id="hg"
+        x1="0"
+        y1="0"
+        x2="128"
+        y2="128"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="#F0B254"></stop>
+        <stop offset="1" stop-color="#B8641E"></stop>
+      </linearGradient>
+    </defs>
+
+    <!-- Background rounded rect -->
+    <rect width="128" height="128" rx="28" fill="url(#hg)"></rect>
+
+    <!-- Shadow at the base — shrinks when "i" is airborne -->
+    <ellipse
+      cx="64"
+      cy="112"
+      rx="18"
+      ry="3"
+      fill="rgba(0,0,0,0.12)"
+      class="bounce-shadow"></ellipse>
+
+    <!-- The "i" — bounces out of the container -->
+    <g class="bounce-i">
+      <circle cx="64" cy="34" r="10" fill="#fff"></circle>
+      <rect x="53" y="54" width="22" height="50" rx="7" fill="#fff"></rect>
+    </g>
+  </svg>
+</div>
+
+<style>
+  .bounce-i {
+    transform-origin: 64px 104px;
+    animation: bounce-i 6s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  }
+
+  .bounce-shadow {
+    transform-origin: 64px 112px;
+    animation: bounce-shadow 6s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  }
+
+  @keyframes bounce-i {
+    0%,
+    30%,
+    100% {
+      transform: translateY(0) scaleY(1) scaleX(1);
+    }
+    4% {
+      transform: translateY(5px) scaleY(0.75) scaleX(1.2);
+    }
+    10% {
+      transform: translateY(-70px) scaleY(1.2) scaleX(0.85);
+    }
+    13% {
+      transform: translateY(-74px) scaleY(0.95) scaleX(1.03);
+    }
+    20% {
+      transform: translateY(0) scaleY(0.72) scaleX(1.22);
+    }
+    24% {
+      transform: translateY(-12px) scaleY(1.08) scaleX(0.95);
+    }
+    28% {
+      transform: translateY(0) scaleY(0.96) scaleX(1.03);
+    }
+  }
+
+  @keyframes bounce-shadow {
+    0%,
+    30%,
+    100% {
+      transform: scaleX(1) scaleY(1);
+      opacity: 1;
+    }
+    4% {
+      transform: scaleX(1.3) scaleY(1.2);
+      opacity: 1;
+    }
+    10% {
+      transform: scaleX(0.4) scaleY(0.5);
+      opacity: 0.3;
+    }
+    13% {
+      transform: scaleX(0.35) scaleY(0.4);
+      opacity: 0.25;
+    }
+    20% {
+      transform: scaleX(1.3) scaleY(1.3);
+      opacity: 1;
+    }
+    24% {
+      transform: scaleX(0.7) scaleY(0.8);
+      opacity: 0.7;
+    }
+    28% {
+      transform: scaleX(1) scaleY(1);
+      opacity: 1;
+    }
+  }
+</style>

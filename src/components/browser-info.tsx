@@ -6,7 +6,7 @@ import { InfoCard } from "./info-card";
 function InfoRow({ label, value }: { label: string; value: string | preact.ComponentChildren }) {
   return (
     <tr>
-      <td class="font-medium text-base-content/80 w-28 whitespace-nowrap">{label}</td>
+      <td class="font-medium text-base-content/60 w-28 whitespace-nowrap">{label}</td>
       <td class="font-mono text-sm break-all">{value || "—"}</td>
     </tr>
   );
@@ -133,8 +133,11 @@ function BrowserInfo() {
               label="Platform"
               value={
                 [
-                  (navigator as Navigator & { userAgentData?: { platform: string } }).userAgentData
-                    ?.platform ?? navigator.platform,
+                  (
+                    navigator as Navigator & {
+                      userAgentData?: { platform: string };
+                    }
+                  ).userAgentData?.platform ?? navigator.platform,
                   navigator.language,
                 ]
                   .filter(Boolean)

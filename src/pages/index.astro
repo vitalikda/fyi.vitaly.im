@@ -1,12 +1,22 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import BrowserInfo from "../components/browser-info.tsx";
+import HeaderIllustration from "../components/header-illustration.astro";
 ---
-<Layout title="Browser Info — FYI" description="View your browser and device information.">
+
+<Layout
+  title="Browser Info — FYI"
+  description="View your browser and device information."
+>
   <main class="container mx-auto px-4 py-6 max-w-4xl">
-    <header class="text-center mb-4">
-      <h1 class="text-2xl font-bold text-primary mb-1">Browser Info</h1>
-      <p class="text-base-content/70 text-sm">Client-side browser and device details</p>
+    <header class="flex gap-4 items-center mb-4 overflow-visible">
+      <HeaderIllustration />
+      <div>
+        <h1 class="text-2xl font-bold text-primary mb-1">Browser Info</h1>
+        <p class="text-base-content/70 text-sm">
+          Client-side browser and device details
+        </p>
+      </div>
     </header>
     <BrowserInfo client:only="preact" />
   </main>
