@@ -1,4 +1,5 @@
 {
+  "$schema": "./node_modules/wrangler/config-schema.json",
   "main": "dist/_worker.js/index.js",
   "name": "fyi-vitaly-im",
   "compatibility_date": "2026-03-07",
@@ -10,4 +11,10 @@
   "observability": {
     "enabled": true,
   },
+  "routes": [
+    {
+      "pattern": "fyi.vitaly.im",
+      "custom_domain": true,
+    },
+  ],
 }
